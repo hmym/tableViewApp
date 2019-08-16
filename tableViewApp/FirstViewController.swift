@@ -24,9 +24,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
 
-    @IBAction func addButton(_ sender: Any) {
-//        self.navigationController?.AddListViewController(FirstViewController, animated: true)
-    }
     @IBOutlet weak var listsTable: UITableView!
     
     override func viewDidLoad() {
@@ -46,6 +43,20 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         // tableViewを更新する
         listsTable.reloadData()
+    }
+    
+    // cellを編集したい時に呼び出す関数
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // cellの編集スタイルをdeleteに決める
+        if editingStyle == .delete {
+            // ユーザーが指定した行を配列から削除する
+            resultLists.remove(at: indexPath.row)
+            // UserDefaultsの値を保存
+            UserDefaults.standard.set(resultLists, forKey: "add")
+            // tableViewを再読み込み
+            listsTable.reloadData()
+        }
+       
     }
 
     /*

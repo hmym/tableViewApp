@@ -126,8 +126,7 @@
                     <navigationItem key="navigationItem" title="Title" id="eFo-xV-qwU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wp1-Au-XZe">
                             <connections>
-                                <action selector="addButton:" destination="MCg-QL-Rwe" id="I6r-AI-0rL"/>
-                                <segue destination="wJL-h4-oso" kind="show" id="z8U-rg-l6a"/>
+                                <segue destination="wJL-h4-oso" kind="show" id="KX8-GY-pxI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

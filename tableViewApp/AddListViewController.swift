@@ -14,9 +14,9 @@ class AddListViewController: UIViewController {
     @IBOutlet weak var addText: UITextField!
     
     @IBAction func addButton(_ sender: Any) {
-        
+        // もしUserDefaultsに値が入っていたら
         if UserDefaults.standard.object(forKey: "add") != nil {
-            // 配列にその値を入れる
+            // 配列listsにその値をかえす
             lists = UserDefaults.standard.object(forKey: "add") as! [String]
         }
         // addTextに入力された値を配列に追加します
@@ -25,7 +25,7 @@ class AddListViewController: UIViewController {
         // 配列listsを保存する。キー値はaddとします。
         UserDefaults.standard.set(lists, forKey: "add")
         
-        // 画面を一つ戻る
+        // 画面を閉じる
         self.navigationController?.popViewController(animated: true)
         print(lists)
     }
